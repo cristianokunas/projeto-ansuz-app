@@ -1,9 +1,12 @@
 package com.anusuz;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.anusuz.config.ConfiguracaoFirebase;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,11 +16,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+    private FirebaseAuth autenticacao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao(); //recupera instância do firebase
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -39,17 +46,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public boolean onOptionsItemSelected(MenuItem item) { /*método que descobre qual item do menu
+                                                                        foi clicado */
+        switch (item.getItemId()) {
+            case R.id.action_getout:
+                deslogarUsuario();
+                Intent login = new Intent(MainActivity.this, LoginActivity.class);
+                login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(login);
+                finish(); //finaliza activity
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void deslogarUsuario() {
+
+        try {
+            autenticacao.signOut(); //aqui desloga o usuário ativo
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
