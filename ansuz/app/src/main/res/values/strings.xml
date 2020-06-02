@@ -1,38 +1,23 @@
 <resources>
     <string name="app_name">Ansuz</string>
     <string name="action_getout">Sair</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="confidence">Confidence</string>
+    <string name="distance">Distance</string>
+    <string name="frame_width">Frame Width</string>
+    <string name="local">Local</string>
+    <string name="max_disappear">Max Disappear</string>
+    <string name="max_distance">Max Distance</string>
+    <string name="speed_limit">Speed Limit</string>
+    <string name="track_object">Track Object</string>
 
 
     <string name="digite_email">Digite seu e-mail</string>
     <string name="digite_senha">Digite sua senha</string>
-    <string name="redigite_senha">Repita sua senha</string>
     <string name="botao_logar">Logar</string>
-    <string name="nao_tem_conta">Cadastre-se clicando aqui.</string>
-    <string name="digite_nome">Digite seu nome</string>
-    <string name="botao_cadastrar">Cadastrar</string>
     <string name="permissao_negada">Permissões Negadas</string>
     <string name="permissao_negada_mensagem">Para usar o aplicativo é necessário aceitar todas as permissões solicitadas.</string>
     <string name="confirmar">Confirmar</string>
-    <string name="novo_grupo">Novo grupo</string>
-    <string name="descricao_criar_grupo">Defina o ícone e nome do grupo</string>
-    <string name="notificacao_mensagens">Você tem novas mensagens.</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="ajustes_activity">Ajustes</string>
-    <string name="nome_usuario">Nome do Usuário</string>
-    <string name="texto_info_usuario">Esse é o nome que ficará visível para os seus contatos.</string>
-    <string name="title_activity_chat">ChatActivity</string>
-    <string name="title_activity_grupo">GrupoActivity</string>
-    <string name="title_activity_cadastro_grupo">CadastroGrupoActivity</string>
 
     <!-- texto de validações cadastro-->
     <string name="invalid_email">Forneça um e-mail válido.</string>
