@@ -15,10 +15,9 @@ public class ConfiguracaoFirebase {
     //retornar a instância do FirebaseDatabase
     public static DatabaseReference getFirebaseDatabase() {
         if (database == null) {
-            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-            Log.d("Success", "Data Persistence Enabled");
+//            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+//            Log.d("Success", "Data Persistence Enabled");
             database = FirebaseDatabase.getInstance().getReference();
-            Log.d("teste4", database.toString());
 
         }
         return database;

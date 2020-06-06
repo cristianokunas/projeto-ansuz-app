@@ -3,8 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.anusuz.MainActivity">
     <item
-        android:id="@+id/action_getout"
+        android:id="@+id/btnSaveConfig"
         android:orderInCategory="100"
+        android:title="@string/save_config"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_getout"
+        android:orderInCategory="101"
         android:title="@string/action_getout"
         app:showAsAction="never" />
 </menu>
