@@ -25,9 +25,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private TextInputEditText campoEmail, campoSenha;
-    private FirebaseAuth autenticacao;
-    private ProgressBar progressoCarregandoLogin;
+    private ViewHolder mViewHolder = new ViewHolder();
+//    private TextInputEditText campoEmail, campoSenha;
+//    private FirebaseAuth autenticacao;
+//    private ProgressBar progressoCarregandoLogin;
     final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%^&+=!/])(?=\\S+$).{6,}$";
 
     @Override
@@ -36,15 +37,15 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //recuperando instância do firebase para realizar a autenticação
-        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+        this.mViewHolder.firebaseAuthAutenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
 
-        campoEmail = findViewById(R.id.editLoginEmail);
-        campoSenha = findViewById(R.id.editLoginSenha);
-        progressoCarregandoLogin = findViewById(R.id.progressBarLogin);
-        progressoCarregandoLogin.setVisibility(View.GONE);
+        this.mViewHolder.editTextEmail = findViewById(R.id.editLoginEmail);
+        this.mViewHolder.editTextSenha = findViewById(R.id.editLoginSenha);
+        this.mViewHolder.progressBarLogin = findViewById(R.id.progressBarLogin);
+        this.mViewHolder.progressBarLogin.setVisibility(View.GONE);
 
         //Valida campo de email da tela de Login
-        campoEmail.addTextChangedListener(new TextWatcher() {
+        this.mViewHolder.editTextEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -57,19 +58,27 @@ public class LoginActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 String message = getString(R.string.invalid_email);
                 if (!Patterns.EMAIL_ADDRESS.matcher(s).matches()) {
-                    campoEmail.setError(message);
+                    mViewHolder.editTextEmail.setError(message);
                 }
             }
         });
     }
 
+    private static class ViewHolder{
+        TextInputEditText editTextEmail, editTextSenha;
+        FirebaseAuth firebaseAuthAutenticacao;
+        ProgressBar progressBarLogin;
+        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%^&+=!/])(?=\\S+$).{6,}$";
+
+    }
+
     public void loginUsuario(Usuario usuario) {
-        autenticacao.signInWithEmailAndPassword(usuario.getEmail(), usuario.getSenha()).addOnCompleteListener(
+        this.mViewHolder.firebaseAuthAutenticacao.signInWithEmailAndPassword(usuario.getEmail(), usuario.getSenha()).addOnCompleteListener(
                 new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            progressoCarregandoLogin.setVisibility(View.GONE);
+                            mViewHolder.progressBarLogin.setVisibility(View.GONE);
                             abrirTelaPrincipal();
                         } else {
                             String excecao = "";
@@ -84,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                                 excecao = "Erro ao realizar login: " + e.getMessage();
                                 e.printStackTrace();
                             }
-                            progressoCarregandoLogin.setVisibility(View.GONE);
+                            mViewHolder.progressBarLogin.setVisibility(View.GONE);
                             Toast.makeText(LoginActivity.this, excecao,
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -93,9 +102,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void validarAutenticacaoUsuario(View view) {
-        progressoCarregandoLogin.setVisibility(View.VISIBLE);
-        String textoEmail = campoEmail.getText().toString();
-        String textoSenha = campoSenha.getText().toString();
+        this.mViewHolder.progressBarLogin.setVisibility(View.VISIBLE);
+        String textoEmail = this.mViewHolder.editTextEmail.getText().toString();
+        String textoSenha = this.mViewHolder.editTextSenha.getText().toString();
 
         //validando os dados de entrada
         if (!textoEmail.isEmpty()) { //verifica email
@@ -107,18 +116,18 @@ public class LoginActivity extends AppCompatActivity {
                 loginUsuario(usuario);
             } else {
                 Toast.makeText(LoginActivity.this, "Preencha a sua senha!", Toast.LENGTH_SHORT).show();
-                progressoCarregandoLogin.setVisibility(View.GONE);
+                this.mViewHolder.progressBarLogin.setVisibility(View.GONE);
             }
         } else {
             Toast.makeText(LoginActivity.this, "Preencha o seu e-mail!", Toast.LENGTH_SHORT).show();
-            progressoCarregandoLogin.setVisibility(View.GONE);
+            this.mViewHolder.progressBarLogin.setVisibility(View.GONE);
         }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser usuarioAtual = autenticacao.getCurrentUser();
+        FirebaseUser usuarioAtual = this.mViewHolder.firebaseAuthAutenticacao.getCurrentUser();
 
         //se um usuário já estiver logado direciona direto para a página inicial ao abrir o aplicativo
         if (usuarioAtual != null) {

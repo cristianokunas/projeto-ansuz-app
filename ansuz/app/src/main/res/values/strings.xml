@@ -10,6 +10,21 @@
     <string name="speed_limit">Speed Limit</string>
     <string name="track_object">Track Object</string>
     <string name="save_config">Salvar</string>
+    <string name="app_version">Versão do Aplicativo: 1.0.0</string>
+    <string name="developers">Desenvolvedores:</string>
+    <string name="dev_cristiano">Cristiano Alex Künas</string>
+    <string name="dev_giovani">Geovani Alex Nieswald</string>
+    <string name="dev_leandro">Leandro Perius Heck</string>
+    <string name="dev_douglas">Douglas Elias Hoffmann</string>
+    <string name="dev_wiliam">Wiliam Felber</string>
+    <string name="copyright">\u00A9 2020</string>
+    <string name="sobre">Sobre</string>
+    <string name="sair_conta">Sair da conta atual</string>
+    <string name="deseja_sair">Tem certeza que deseja sair?</string>
+    <string name="sim">Sim</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="configuracao_att">Configuração atualizada com sucesso!</string>
+
 
 
     <string name="digite_email">Digite seu e-mail</string>
