@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity::";
     private ViewHolder mViewHolder = new ViewHolder();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,54 +69,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.mViewHolder.databaseReferenceProjetoAnsuz.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                    try {
-                        mViewHolder.progressBarMain.setVisibility(View.VISIBLE);
-                        if (isOnline()) {
-                            if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("confidence").getValue() != null)
-                                mViewHolder.editTextFieldConfidence.setText(String.valueOf(dataSnapshot.child("usuarios").
-                                        child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("confidence").getValue()));
-                            if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("distance").getValue() != null)
-                                mViewHolder.editTextFieldDistance.setText(String.valueOf(dataSnapshot.child("usuarios").
-                                        child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("distance").getValue()));
-                            if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("frame_width").getValue() != null)
-                                mViewHolder.editTextFieldFrameWidth.setText(String.valueOf(dataSnapshot.child("usuarios").
-                                        child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("frame_width").getValue()));
-                            if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("local").getValue() != null)
-                                mViewHolder.editTextFieldLocal.setText(String.valueOf(dataSnapshot.child("usuarios").
-                                        child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("local").getValue()));
-                            if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("max_disappear").getValue() != null)
-                                mViewHolder.editTextFieldMaxDisappear.setText(String.valueOf(dataSnapshot.child("usuarios").
-                                        child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("max_disappear").getValue()));
-                            if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("max_distance").getValue() != null)
-                                mViewHolder.editTextFieldMaxDistance.setText(String.valueOf(dataSnapshot.child("usuarios").
-                                        child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("max_distance").getValue()));
-                            if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("speed_limit").getValue() != null)
-                                mViewHolder.editTextFieldSpeedLimit.setText(String.valueOf(dataSnapshot.child("usuarios").
-                                        child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("speed_limit").getValue()));
-                            if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("track_object").getValue() != null)
-                                mViewHolder.editTextFieldTrackObject.setText(String.valueOf(dataSnapshot.child("usuarios").
-                                        child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("track_object").getValue()));
-                            Log.i(TAG, "Dados obtidos com sucesso.");
-                            Toast.makeText(MainActivity.this, "Dados obtidos com sucesso!.", Toast.LENGTH_SHORT).show();
-                            mViewHolder.progressBarMain.setVisibility(View.GONE);
-                        }else {
-                            Toast.makeText(MainActivity.this, "Você não está conectado a Internet.", Toast.LENGTH_SHORT).show();
-                            Log.e(TAG, "Erro ao obter dados.");
-                        }
-                    } catch (Exception e) {
-                        Toast.makeText(MainActivity.this, "Não foi possível obter dados do usuário.", Toast.LENGTH_SHORT).show();
+                try {
+                    mViewHolder.progressBarMain.setVisibility(View.VISIBLE);
+                    if (isOnline()) {
+                        if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("confidence").getValue() != null)
+                            mViewHolder.editTextFieldConfidence.setText(String.valueOf(dataSnapshot.child("usuarios").
+                                    child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("confidence").getValue()));
+                        if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("distance").getValue() != null)
+                            mViewHolder.editTextFieldDistance.setText(String.valueOf(dataSnapshot.child("usuarios").
+                                    child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("distance").getValue()));
+                        if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("frame_width").getValue() != null)
+                            mViewHolder.editTextFieldFrameWidth.setText(String.valueOf(dataSnapshot.child("usuarios").
+                                    child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("frame_width").getValue()));
+                        if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("local").getValue() != null)
+                            mViewHolder.editTextFieldLocal.setText(String.valueOf(dataSnapshot.child("usuarios").
+                                    child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("local").getValue()));
+                        if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("max_disappear").getValue() != null)
+                            mViewHolder.editTextFieldMaxDisappear.setText(String.valueOf(dataSnapshot.child("usuarios").
+                                    child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("max_disappear").getValue()));
+                        if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("max_distance").getValue() != null)
+                            mViewHolder.editTextFieldMaxDistance.setText(String.valueOf(dataSnapshot.child("usuarios").
+                                    child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("max_distance").getValue()));
+                        if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("speed_limit").getValue() != null)
+                            mViewHolder.editTextFieldSpeedLimit.setText(String.valueOf(dataSnapshot.child("usuarios").
+                                    child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("speed_limit").getValue()));
+                        if (dataSnapshot.child("usuarios").child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("track_object").getValue() != null)
+                            mViewHolder.editTextFieldTrackObject.setText(String.valueOf(dataSnapshot.child("usuarios").
+                                    child(mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).child("track_object").getValue()));
+                        Log.i(TAG, "Dados obtidos com sucesso.");
+                        Toast.makeText(MainActivity.this, R.string.data_obtained_successfully, Toast.LENGTH_SHORT).show();
+                        mViewHolder.progressBarMain.setVisibility(View.GONE);
+                    } else {
+                        Toast.makeText(MainActivity.this, R.string.you_are_not_connected, Toast.LENGTH_SHORT).show();
                         Log.e(TAG, "Erro ao obter dados.");
                     }
+                } catch (Exception e) {
+                    Toast.makeText(MainActivity.this, R.string.unable_to_get_user_data, Toast.LENGTH_SHORT).show();
+                    Log.e(TAG, "Erro ao obter dados.");
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "Cancelado!");
+                Log.e(TAG, "Canceled");
             }
         });
     }
 
-    private static class ViewHolder{
+    private static class ViewHolder {
         Toolbar toolbarMain;
         FirebaseAuth firebaseAuthAutenticacao;
         DatabaseReference databaseReferenceProjetoAnsuz;
@@ -126,9 +125,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editTextFieldMaxDistance, editTextFieldSpeedLimit, editTextFieldTrackObject;
         ProgressBar progressBarMain;
         Dialog dialogSobre;
-        TextView textVersion;
+        TextView textVersion, textVersionNumber;
         ImageView imageViewClose;
         Snackbar snackBarAtt;
+
     }
 
     @Override
@@ -149,11 +149,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.action_sobre:
                 mViewHolder.dialogSobre.setContentView(R.layout.popup_sobre);
                 mViewHolder.textVersion = this.mViewHolder.dialogSobre.findViewById(R.id.textVersion);
+                mViewHolder.textVersionNumber = this.mViewHolder.dialogSobre.findViewById(R.id.textVersionNumber);
                 mViewHolder.imageViewClose = this.mViewHolder.dialogSobre.findViewById(R.id.imageViewClose);
 
                 try {
-                    this.mViewHolder.textVersion.setText("Versão do Aplicativo: " + getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
-                }catch (PackageManager.NameNotFoundException e){
+                    this.mViewHolder.textVersionNumber.setText(getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
+                } catch (PackageManager.NameNotFoundException e) {
                     Log.e(TAG, "No name version");
                 }
 
@@ -165,9 +166,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.action_getout:
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
-                final AlertDialog alert = builder.setTitle(R.string.sair_conta)
-                        .setMessage(R.string.deseja_sair)
-                        .setPositiveButton(R.string.sim, new DialogInterface.OnClickListener() {
+                final AlertDialog alert = builder.setTitle(R.string.sign_out_account)
+                        .setMessage(R.string.want_to_leave)
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 deslogarUsuario();
@@ -177,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 finish(); //finaliza activity
                             }
                         })
-                        .setNegativeButton(R.string.cancelar, null)
+                        .setNegativeButton(R.string.cancel, null)
                         .create();
 
                 alert.setOnShowListener(new DialogInterface.OnShowListener() {
@@ -214,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void SalvarConfigs(){
+    public void SalvarConfigs() {
         try {
             if (isOnline()) {
                 if (!this.mViewHolder.editTextFieldConfidence.getText().toString().isEmpty())
@@ -249,18 +250,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     this.mViewHolder.databaseReferenceProjetoAnsuz.child("usuarios").
                             child(this.mViewHolder.firebaseAuthAutenticacao.getCurrentUser().getUid()).
                             child("track_object").setValue(this.mViewHolder.editTextFieldTrackObject.getText().toString());
-                this.mViewHolder.snackBarAtt = Snackbar.make(findViewById(R.id.linearLayout), R.string.configuracao_att, Snackbar.LENGTH_LONG);
+                this.mViewHolder.snackBarAtt = Snackbar.make(findViewById(R.id.linearLayout), R.string.updated_configuration, Snackbar.LENGTH_LONG);
                 this.mViewHolder.snackBarAtt.show();
                 Log.i(TAG, "Configuração atualizada.");
-//                Toast.makeText(MainActivity.this, "Configuração atualizada com sucesso!", Toast.LENGTH_SHORT).show();
                 this.mViewHolder.progressBarMain.setVisibility(View.GONE);
-            }else {
+            } else {
                 this.mViewHolder.progressBarMain.setVisibility(View.GONE);
-                Toast.makeText(MainActivity.this, "Você não está conectado a Internet.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.you_are_not_connected, Toast.LENGTH_SHORT).show();
                 Log.e(TAG, "Erro ao obter dados.");
             }
-        }catch (Exception e){
-            Toast.makeText(MainActivity.this, "Não foi possível obter dados do usuário.", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(MainActivity.this, R.string.unable_to_get_user_data, Toast.LENGTH_SHORT).show();
             Log.e(TAG, "Erro ao obter dados.");
         }
     }

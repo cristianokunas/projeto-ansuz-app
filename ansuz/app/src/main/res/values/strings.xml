@@ -1,49 +1,60 @@
 <resources>
+    <!--    app-->
     <string name="app_name">Ansuz</string>
-    <string name="action_getout">Sair</string>
+    <string name="network_error">A network error occurred.</string>
+    <string name="you_are_not_connected">You are not connected to the Internet.</string>
+    <string name="error_getting_data">Error getting data.</string>
+    <string name="unable_to_get_user_data">Unable to get user data.</string>
+    <string name="data_obtained_successfully">Data obtained successfully!</string>
+
+    <!--    Text Inputs Configuration-->
     <string name="confidence">Confidence</string>
     <string name="distance">Distance</string>
     <string name="frame_width">Frame Width</string>
     <string name="local">Local</string>
-    <string name="max_disappear">Max Disappear</string>
-    <string name="max_distance">Max Distance</string>
+    <string name="max_disappear">Maximum Disappear</string>
+    <string name="max_distance">Maximum Distance</string>
     <string name="speed_limit">Speed Limit</string>
     <string name="track_object">Track Object</string>
-    <string name="save_config">Salvar</string>
-    <string name="app_version">Versão do Aplicativo: 1.0.0</string>
-    <string name="developers">Desenvolvedores:</string>
+
+    <!--    Sobre-->
+    <string name="app_version">Application Version:</string>
+    <string name="developers">Developers:</string>
     <string name="dev_cristiano">Cristiano Alex Künas</string>
     <string name="dev_giovani">Geovani Alex Nieswald</string>
     <string name="dev_leandro">Leandro Perius Heck</string>
     <string name="dev_douglas">Douglas Elias Hoffmann</string>
     <string name="dev_wiliam">Wiliam Felber</string>
     <string name="copyright">\u00A9 2020</string>
-    <string name="sobre">Sobre</string>
-    <string name="sair_conta">Sair da conta atual</string>
-    <string name="deseja_sair">Tem certeza que deseja sair?</string>
-    <string name="sim">Sim</string>
-    <string name="cancelar">Cancelar</string>
-    <string name="configuracao_att">Configuração atualizada com sucesso!</string>
 
+    <!--    popup confirmação sair-->
+    <string name="sign_out_account">Sign out account</string>
+    <string name="want_to_leave">Are you sure you want to leave?</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
 
+    <!--    Configuração salva-->
+    <string name="updated_configuration">Configuration updated successfully!</string>
 
-    <string name="digite_email">Digite seu e-mail</string>
-    <string name="digite_senha">Digite sua senha</string>
-    <string name="botao_logar">Logar</string>
-    <string name="permissao_negada">Permissões Negadas</string>
-    <string name="permissao_negada_mensagem">Para usar o aplicativo é necessário aceitar todas as permissões solicitadas.</string>
-    <string name="confirmar">Confirmar</string>
+    <!--    Menu Buttons-->
+    <string name="save">Save</string>
+    <string name="about">About</string>
+    <string name="action_getout">Sign out</string>
 
-
-    <!-- texto de validações cadastro-->
-    <string name="invalid_email">Forneça um e-mail válido.</string>
-    <string name="invalid_password">Formato de senha inválido.</string>
-    <string name="invalid_revalid_password">As senhas devem ser iguais!</string>
-    <string name="forgot_my_password">Esqueci minha senha.</string>
-    <string name="sign_in_going">Entrando&#8230;</string>
-    <string name="or">ou</string>
-    <string name="sign_up">Criar minha conta</string>
-    <string name="privacy_policy">Políticas de privacidade</string>
-    <string name="invalid_login">Dados de login inválidos.</string>
-    <string name="title_activity_noticia">NoticiaActivity</string>
+    <!-- Texto de validações login-->
+    <string name="type_email">Type your e-mail</string>
+    <string name="type_password">Type your password</string>
+    <string name="button_login">Login</string>
+    <string name="fill_in_your_email">Fill in your email!</string>
+    <string name="invalid_email">Provide a valid email</string>
+    <string name="fill_in_your_password">Fill in your password!</string>
+    <string name="invalid_password">Invalid password format</string>
+    <string name="invalid_revalid_password">Passwords must be the same</string>
+    <string name="forgot_my_password">Forgot my password</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="unregistered_user">Unregistered user</string>
+    <string name="wrong_email_or_password">Wrong email or password</string>
+    <string name="error_logging_in">Error signing in</string>
+    <string name="invalid_login">Invalid login data</string>
 </resources>

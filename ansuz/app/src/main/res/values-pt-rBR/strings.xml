@@ -1,0 +1,60 @@
+<resources>
+    <!--    app-->
+    <string name="app_name">Ansuz</string>
+    <string name="network_error">Ocorreu um erro de rede.</string>
+    <string name="you_are_not_connected">Você não está conectado à Internet.</string>
+    <string name="error_getting_data">Erro ao obter dados.</string>
+    <string name="unable_to_get_user_data">Não foi possível obter os dados do usuário.</string>
+    <string name="data_obtained_successfully">Dados obtidos com sucesso!</string>
+
+    <!--    Text Inputs Configuration-->
+    <string name="confidence">Confiança</string>
+    <string name="distance">Distância</string>
+    <string name="frame_width">Largura do Frame</string>
+    <string name="local">Local</string>
+    <string name="max_disappear">Desaparecimento máximo</string>
+    <string name="max_distance">Distância Máxima</string>
+    <string name="speed_limit">Limite de velocidade</string>
+    <string name="track_object">Rastrear Objeto</string>
+
+    <!--    Sobre-->
+    <string name="app_version">Versão do aplicativo: </string>
+    <string name="developers">Desenvolvedores:</string>
+    <string name="dev_cristiano">Cristiano Alex Künas</string>
+    <string name="dev_giovani">Geovani Alex Nieswald</string>
+    <string name="dev_leandro">Leandro Perius Heck</string>
+    <string name="dev_douglas">Douglas Elias Hoffmann</string>
+    <string name="dev_wiliam">Wiliam Felber</string>
+    <string name="copyright">\u00A9 2020</string>
+
+    <!--    popup confirmação sair-->
+    <string name="sign_out_account">Sair da conta</string>
+    <string name="want_to_leave">Você tem certeza que quer sair?</string>
+    <string name="yes">Sim</string>
+    <string name="cancel">Cancelar</string>
+    <string name="close">Fechar</string>
+
+    <!--    Configuração salva-->
+    <string name="updated_configuration">Configuração atualizada com sucesso!</string>
+
+    <!--    Menu Buttons-->
+    <string name="save">Salvar</string>
+    <string name="about">Sobre</string>
+    <string name="action_getout">Sair</string>
+
+    <!-- Texto de validações login-->
+    <string name="type_email">Digite seu e-mail</string>
+    <string name="type_password">Digite sua senha</string>
+    <string name="button_login">Entrar</string>
+    <string name="fill_in_your_email">Preencha o seu e-mail!</string>
+    <string name="invalid_email">Forneça um e-mail válido</string>
+    <string name="fill_in_your_password">Preencha a sua senha!</string>
+    <string name="invalid_password">Formato de senha inválido</string>
+    <string name="invalid_revalid_password">As senhas devem ser as mesmas</string>
+    <string name="forgot_my_password">Esqueci minha senha</string>
+    <string name="privacy_policy">Política de privacidade</string>
+    <string name="unregistered_user">Usuário não cadastrado</string>
+    <string name="wrong_email_or_password">E-mail ou senha incorretos</string>
+    <string name="error_logging_in">Erro ao fazer login</string>
+    <string name="invalid_login">Dados de login inválidos</string>
+</resources>

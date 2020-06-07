@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -16,6 +17,7 @@ import com.anusuz.config.ConfiguracaoFirebase;
 import com.anusuz.modelo.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,10 +28,9 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     private ViewHolder mViewHolder = new ViewHolder();
-//    private TextInputEditText campoEmail, campoSenha;
-//    private FirebaseAuth autenticacao;
-//    private ProgressBar progressoCarregandoLogin;
     final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%^&+=!/])(?=\\S+$).{6,}$";
+    private static final String TAG = "LoginActivity::";
+    private Snackbar snackBarError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,12 +65,10 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private static class ViewHolder{
+    private static class ViewHolder {
         TextInputEditText editTextEmail, editTextSenha;
         FirebaseAuth firebaseAuthAutenticacao;
         ProgressBar progressBarLogin;
-        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%^&+=!/])(?=\\S+$).{6,}$";
-
     }
 
     public void loginUsuario(Usuario usuario) {
@@ -81,21 +80,28 @@ public class LoginActivity extends AppCompatActivity {
                             mViewHolder.progressBarLogin.setVisibility(View.GONE);
                             abrirTelaPrincipal();
                         } else {
-                            String excecao = "";
+                            Integer excecao;
+                            String error = "";
 
                             try {
                                 throw task.getException();
                             } catch (FirebaseAuthInvalidUserException e) {
-                                excecao = "Usuário não cadastrado.";
+                                excecao = R.string.unregistered_user;
                             } catch (FirebaseAuthInvalidCredentialsException e) {
-                                excecao = "E-mail ou senha incorretos.";
+                                excecao = R.string.wrong_email_or_password;
                             } catch (Exception e) {
-                                excecao = "Erro ao realizar login: " + e.getMessage();
+                                excecao = R.string.error_logging_in;
                                 e.printStackTrace();
+                                Log.e(TAG, e.getMessage());
+                                error = e.getMessage();
                             }
                             mViewHolder.progressBarLogin.setVisibility(View.GONE);
-                            Toast.makeText(LoginActivity.this, excecao,
-                                    Toast.LENGTH_SHORT).show();
+                            if (error.contains("network")) {
+                                Toast.makeText(LoginActivity.this, R.string.network_error,
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                            snackBarError = Snackbar.make(findViewById(R.id.layoutLogin), excecao, Snackbar.LENGTH_LONG);
+                            snackBarError.show();
                         }
                     }
                 });
@@ -115,11 +121,11 @@ public class LoginActivity extends AppCompatActivity {
 
                 loginUsuario(usuario);
             } else {
-                Toast.makeText(LoginActivity.this, "Preencha a sua senha!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, R.string.fill_in_your_password, Toast.LENGTH_SHORT).show();
                 this.mViewHolder.progressBarLogin.setVisibility(View.GONE);
             }
         } else {
-            Toast.makeText(LoginActivity.this, "Preencha o seu e-mail!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, R.string.fill_in_your_email, Toast.LENGTH_SHORT).show();
             this.mViewHolder.progressBarLogin.setVisibility(View.GONE);
         }
     }
