@@ -38,7 +38,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutScroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textImputLayout3"
@@ -47,12 +49,15 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
+                android:textColorHint="@color/preto"
+                android:theme="@style/myTextInputLabelBlack"
                 app:layout_constraintBottom_toTopOf="@+id/textImputLayout4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:importantForAutofill="noExcludeDescendants"
                     android:id="@+id/textConfidence"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -68,12 +73,15 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
+                android:textColorHint="@color/preto"
+                android:theme="@style/myTextInputLabelBlack"
                 app:layout_constraintBottom_toTopOf="@+id/textImputLayout5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textImputLayout3">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:importantForAutofill="noExcludeDescendants"
                     android:id="@+id/textDistance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -89,12 +97,15 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
+                android:textColorHint="@color/preto"
+                android:theme="@style/myTextInputLabelBlack"
                 app:layout_constraintBottom_toTopOf="@+id/textImputLayout6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textImputLayout4">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:importantForAutofill="noExcludeDescendants"
                     android:id="@+id/textFrameWidth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -110,12 +121,15 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
+                android:textColorHint="@color/preto"
+                android:theme="@style/myTextInputLabelBlack"
                 app:layout_constraintBottom_toTopOf="@+id/textImputLayout7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textImputLayout5">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:importantForAutofill="noExcludeDescendants"
                     android:id="@+id/textLocal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -131,12 +145,15 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
+                android:textColorHint="@color/preto"
+                android:theme="@style/myTextInputLabelBlack"
                 app:layout_constraintBottom_toTopOf="@+id/textImputLayout8"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textImputLayout6">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:importantForAutofill="noExcludeDescendants"
                     android:id="@+id/textDisappear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -152,12 +169,15 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
+                android:textColorHint="@color/preto"
+                android:theme="@style/myTextInputLabelBlack"
                 app:layout_constraintBottom_toTopOf="@+id/textImputLayout9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textImputLayout7">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:importantForAutofill="noExcludeDescendants"
                     android:id="@+id/textMaxDistance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -173,12 +193,15 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
+                android:textColorHint="@color/preto"
+                android:theme="@style/myTextInputLabelBlack"
                 app:layout_constraintBottom_toTopOf="@+id/textImputLayout10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textImputLayout8">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:importantForAutofill="noExcludeDescendants"
                     android:id="@+id/textSpeedLimit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -195,12 +218,15 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="24dp"
+                android:textColorHint="@color/preto"
+                android:theme="@style/myTextInputLabelBlack"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textImputLayout9">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:importantForAutofill="noExcludeDescendants"
                     android:id="@+id/textTrackObject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
